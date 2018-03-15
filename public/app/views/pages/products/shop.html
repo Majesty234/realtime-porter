@@ -1,0 +1,22 @@
+
+
+<div class="row">
+ 	<div ng-repeat="products in product.items" class="col-sm-6 col-md-3">
+        <div class="thumbnail">               
+            <a href="#" class="overlay-wrapper">
+                <img src="{{ products.imagePath }}" alt="..." class="img-responsive">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Add to Cart</span> </span>
+                </span>
+            </a>
+            <div class="caption">
+                <h3>{{ products.title }}</h3>
+                <p class="description">{{ products.description }}</p>
+                <div class="clearfix">
+                    <div class="price pull-left">${{ products.price }}</div>
+                    <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

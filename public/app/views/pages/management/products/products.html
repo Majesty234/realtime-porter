@@ -1,0 +1,100 @@
+    
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3>Products List</h3>
+                </div>
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>ITEMS</th>
+                            <th>TITLE</th>
+                            <th>PRICE</th>
+                            <th>IN STOCK</th>                     
+                            <th>ACTION</th>
+                          </tr>
+                        </thead>
+                        <tbody>                               
+                          <tr ng-repeat="productlists in productlist.productList">
+                            <td class="product-list"><img src="{{productlists.imagePath}}" alt="Product item"></td>
+                            <td><strong>{{productlists.title}}</strong></td>
+                            <td><span class="label label-success">{{productlists.price}}</span></td>
+                            <td>
+                              <a href="#"><span class="fa fa-minus-square"></span></a>
+                              <span class="badge">3</span>
+                              <a href="#"><span class="fa fa-plus-square"></span></a>
+                            </td>
+                            <td>
+                              <a href="#" data-toggle="modal" data-target="#productModal" class="label label-info">View</a>
+                              <a href="" ng-click="productlist.showEditProductModal(currentProduct);" class="label label-warning">Edit</a>
+                              <a href="#" class="label label-danger">delete</a>
+                            </td>
+                          </tr>                                            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+      
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+                <strong class="pull-right"></strong>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+                <a href="#" type="button" class="btn btn-success pull-right"></a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+                <h2>No product found</h2>
+                {{currentProduct.imagePath}}
+            </div>
+        </div>
+        
+        <!-- BootstrapJS Modal -->
+        <div class="modal fade" id="productModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal - Edit products-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button ng-hide="" type="button" ng-click="" class="close" data-dismiss="modal">&times;</button>
+                        <!-- Modal Header -->
+                        <h4 class="modal-title">View / Edit Product</h4>
+                    </div>
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <div class="row">
+                          <span class="view-product">
+                            <div class="col-sm-10 col-md-7 col-md-offset-1 col-sm-offset-1 view-product-img">
+                              <img src="{{ productlist.imagePath }}">
+                              <p>{{ productlist.price }}</p>
+                            </div>
+                            <div class="col-sm-10 col-md-4 col-md-offset-1 col-sm-offset-1">
+                              <h4>{{ productlist.title }}</h4>
+                              <p>{{ productlist.description }}</p>
+                            </div> 
+                          </span>                         
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Modal 'Yes' & 'No' Buttons -->
+                        <button type="button" ng-hide="" ng-click="" class="btn btn-info" data-dismiss="modal">Save</button>
+                        <button type="button" ng-hide="" ng-click="" class="btn btn-warning" data-dismiss="modal">Preview</button>
+                        <button type="button" ng-hide="" ng-click="" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- BootstrapJS Modal -->
